@@ -1,104 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ELEVENZ FORCE | FORCE RADIO</title>
-<style>
-*{box-sizing:border-box}
-body{
-margin:0;min-height:100vh;padding:20px;
-display:grid;place-items:center;
-background:linear-gradient(145deg,#241207,#090b10);
-color:white;font-family:Arial,sans-serif}
-.player{
-width:100%;max-width:540px;
-background:#171a20;border:1px solid #393939;
-border-radius:22px;overflow:hidden}
-header{
-padding:28px 24px;
-background:linear-gradient(120deg,#ff7900,#a93808)}
-header small{font-weight:bold;letter-spacing:2px}
-h1{font-size:42px;margin:15px 0 5px}
-header p{font-size:12px;letter-spacing:2px}
-main{padding:20px}
-.tag{color:#ff993d;font-size:13px;font-weight:bold}
-.video{
-margin-top:15px;aspect-ratio:16/9;
-background:black;border-radius:12px;overflow:hidden}
-iframe{width:100%;height:100%;border:0}
-#status{color:#c5c5c5;font-size:13px;line-height:1.6}
-a{
-display:block;text-align:center;padding:14px;
-margin-top:10px;border-radius:10px;
-text-decoration:none;font-weight:bold}
-.primary{background:#ff7900;color:#111}
-.secondary{background:#30343b;color:white}
-footer{
-text-align:center;color:#999;
-font-size:11px;padding:20px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <title>FORCE RADIO | ELEVENZ FORCE FC</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:linear-gradient(145deg,#080808,#242424);color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;align-items:center;padding:20px}
+    .player{width:100%;max-width:540px;background:#171717;border:1px solid #393939;border-radius:22px;overflow:hidden;box-shadow:0 20px 55px #0009}
+    header{text-align:center;padding:28px 20px 22px;background:linear-gradient(150deg,#292929,#121212);border-top:6px solid #ff7900}
+    small{color:#ff9b40;font-size:12px;letter-spacing:2px;font-weight:700}
+    h1{font-size:34px;letter-spacing:2px;margin:12px 0;color:#fff}
+    .play-icon{color:#ff7900}
+    header p{font-size:12px;letter-spacing:2px;color:#ccc;margin:0}
+    main{padding:22px}
+    .tag{font-size:12px;letter-spacing:1.5px;font-weight:bold;color:#ff9b40;margin-bottom:12px}
+    .video{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+    iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .note{color:#bbb;font-size:13px;line-height:1.5;text-align:center;margin:16px 0}
+    a{display:block;text-decoration:none;text-align:center;font-weight:bold;border-radius:10px;padding:14px 12px;margin-top:11px;font-size:14px}
+    .primary{background:#ff7900;color:#151515}
+    .secondary{border:1px solid #ff7900;color:#ff9b40}
+    footer{text-align:center;color:#888;font-size:11px;padding:0 12px 22px}
+  </style>
 </head>
 <body>
-<div class="player">
-<header>
-<small>ELEVENZ FORCE FC • OFFICIAL MUSIC</small>
-<h1>FORCE RADIO ▶</h1>
-<p>ONE CLUB ONE FORCE</p>
-</header>
-<main>
-<div class="tag">🎵 YOUTUBE PLAYLIST</div>
-<div class="video">
-<div id="youtube-player"></div>
-</div>
-<p id="status">Loading YouTube Player...</p>
-<a class="primary"
-href="https://music.youtube.com/playlist?list=PLlyuF5efWWnnGyxWFojdz5fYuoePM_SVb"
-target="_blank" rel="noopener noreferrer">
-♫ OPEN YOUTUBE MUSIC
-</a>
-<a class="secondary"
-href="https://www.youtube.com/playlist?list=PLlyuF5efWWnnGyxWFojdz5fYuoePM_SVb"
-target="_blank" rel="noopener noreferrer">
-VIEW PLAYLIST
-</a>
-</main>
-<footer>ELEVENZ FORCE FC • PROTOTYPE 2027</footer>
-</div>
-<script>
-const playlist="PLlyuF5efWWnnGyxWFojdz5fYuoePM_SVb";
-const status=document.getElementById("status");
-let player;
-function onYouTubeIframeAPIReady(){
-player=new YT.Player("youtube-player",{
-width:"100%",
-height:"100%",
-videoId:"3JWTaaS7LdU",
-playerVars:{
-playsinline:1,
-rel:0,
-origin:window.location.origin
-},
-events:{
-onReady:function(){
-status.textContent="Player ready. Tekan Play untuk mula mendengar.";
-},
-onError:function(e){
-const errors={
-2:"Video ID tidak sah.",
-5:"Video tidak dapat dimainkan.",
-100:"Video tidak tersedia.",
-101:"Video tidak membenarkan embedded playback.",
-150:"Video tidak membenarkan embedded playback."
-};
-status.textContent=(errors[e.data]||"Playback error.")+
-" Cuba buka YouTube Music melalui pautan di bawah.";
-}
-}
-});
-}
-</script>
-<script src="https://www.youtube.com/iframe_api"></script>
+  <div class="player">
+    <header>
+      <small>ELEVENZ FORCE FC · OFFICIAL MUSIC</small>
+      <h1>FORCE RADIO <span class="play-icon">▶</span></h1>
+      <p>ONE CLUB ONE FORCE</p>
+    </header>
+    <main>
+      <div class="tag">🎵 VIDEO PLAYBACK TEST</div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/3JWTaaS7LdU?playsinline=1&rel=0"
+          title="FORCE RADIO YouTube Player"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <p class="note">Tekan ▶ pada video untuk cuba mainkan muzik terus di sini.</p>
+      <a class="primary" href="https://music.youtube.com/playlist?list=PLlyuF5efWWnnGyxWFojdz5fYuoePM_SVb" target="_blank" rel="noopener noreferrer">🎵 OPEN YOUTUBE MUSIC PLAYLIST</a>
+      <a class="secondary" href="https://www.youtube.com/playlist?list=PLlyuF5efWWnnGyxWFojdz5fYuoePM_SVb" target="_blank" rel="noopener noreferrer">VIEW FULL PLAYLIST</a>
+    </main>
+    <footer>ELEVENZ FORCE FC · PROTOTYPE 2027</footer>
+  </div>
 </body>
 </html>
